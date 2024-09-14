@@ -31,6 +31,7 @@ classifiers = [
   "Topic :: Software Development :: Documentation",
   "Topic :: Text Processing :: Markup :: HTML",
 ]
+requires-python = ">= 3.7"
 dynamic = ["version", "description"]
 dependencies = [
   "docutils",
