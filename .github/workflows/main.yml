@@ -28,16 +28,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
+        id: 'setup-python'
         uses: actions/setup-python@v4
         with:
           architecture: x64
           python-version: ${{ matrix.python-version }}
-      - name: Install dependencies
+      - name: Setup environment
         run: |
-          pip install '.[test]'
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv sync --python='${{ steps.setup-python.outputs.python-path }}'
       - name: Run tests
         run: |
-          pytest
+          uv run pytest
   packaging:
     runs-on: ubuntu-latest
     steps:
@@ -61,7 +63,8 @@ jobs:
         with:
           architecture: x64
           python-version: '3.10'
-      - name: Build
+      - name: Setup environment
         run: |
-          pip install '.[docs]'
-          make -C docs html
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv sync
+          uv run make -C docs html
