@@ -43,13 +43,6 @@ dependencies = [
 cli = [
   "Click",
 ]
-docs = [
-  "furo",
-  "sphinx-intl",
-]
-test = [
-  "pytest",
-]
 
 [project.scripts]
 atsphinx-sqlite3fts = "atsphinx.sqlite3fts.cli:main"
@@ -58,6 +51,13 @@ atsphinx-sqlite3fts = "atsphinx.sqlite3fts.cli:main"
 Home = "https://atsphinx.github.io/sqlite3fts"
 Repository = "https://github.com/atsphinx/sqlite3fts"
 Documentation = "https://atsphinx-sqlite3fts.readthedocs.io/"
+
+[tool.uv]
+dev-dependencies = [
+  "furo",
+  "sphinx-intl",
+  "pytest",
+]
 
 [tool.flit.module]
 name = "atsphinx.sqlite3fts"

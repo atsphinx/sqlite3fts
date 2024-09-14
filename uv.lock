@@ -24,23 +24,27 @@ dependencies = [
 cli = [
     { name = "click" },
 ]
-docs = [
+
+[package.dev-dependencies]
+dev = [
     { name = "furo" },
-    { name = "sphinx-intl" },
-]
-test = [
     { name = "pytest" },
+    { name = "sphinx-intl" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "click", marker = "extra == 'cli'" },
     { name = "docutils" },
-    { name = "furo", marker = "extra == 'docs'" },
     { name = "peewee" },
-    { name = "pytest", marker = "extra == 'test'" },
     { name = "sphinx" },
-    { name = "sphinx-intl", marker = "extra == 'docs'" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "furo" },
+    { name = "pytest" },
+    { name = "sphinx-intl" },
 ]
 
 [[package]]
