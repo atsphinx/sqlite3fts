@@ -3,7 +3,7 @@ from sphinx.application import Sphinx
 
 from . import builders, events
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
 
 
 def setup(app: Sphinx):

@@ -2,6 +2,18 @@
 Latest changes
 ==============
 
+v0.1.4
+======
+
+:Date: 2024-09-14 (JST)
+
+(Not featured release)
+
+Misc
+----
+
+* Add classifier for python 3.12
+
 v0.1.3
 ======
 
