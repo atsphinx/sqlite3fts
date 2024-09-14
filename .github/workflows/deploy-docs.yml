@@ -25,12 +25,13 @@ jobs:
         with:
           architecture: x64
           python-version: '3.10'
-      - name: Install dependencies
+      - name: Setup environment
         run: |
-          pip install '.[docs]'
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv sync
       - name: Build documentation
         run: |
-          make -C docs dirhtml
+          uv run make -C docs dirhtml
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
